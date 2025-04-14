@@ -1,7 +1,7 @@
 import flask
 from flask import request
 import os
-from bot import QuoteBot
+from polybot.bot import ImageProcessingBot  # Change this line
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -28,5 +28,5 @@ def webhook():
     return 'Ok'
 
 if __name__ == "__main__":
-    bot = bot(TELEGRAM_BOT_TOKEN, BOT_APP_URL)
+    bot = ImageProcessingBot(TELEGRAM_BOT_TOKEN, BOT_APP_URL)  # Change this line
     app.run(host='0.0.0.0', port=8443)
